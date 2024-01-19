@@ -1,1 +1,1 @@
-# FungiBayesianNetwork
+# InSilicoKnockOUt
