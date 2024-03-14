@@ -1,19 +1,23 @@
 # SMILE
-SMILE (Systems Maximum Informative Laboratory Experiment) uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Network, and then calculates the Jensen-Shannon divergence between networks.
+SMILE (Systems Maximum Informative Laboratory Experiment) uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Network, and then calculates the Jensen-Shannon divergence (JSD) between networks.
 ## INSTALLATION
 
-SMILE has been tested in Red Hat Enterprise Linux release 8.8 and based on Python 3.
-To install SMILE, just download the this repository.
+SMILE has been tested in **Red Hat Enterprise Linux release 8.8** and is based on **Python 3**.
+To install SMILE, just download this repository.
 
 
-To test and get familiar with SMILE, you can copy the demo files we provide under the **'example/input_demo'** directory 
-to a folder(for example, the "input" folder), then run `python simle.py <csv_file_path> [k]`. You can also compare your output 
-to the results in the directory **'example/output_demo'**.
+To test and get familiar with SMILE, you can copy the demo files we provide under the **'example/input_demo'** directory to a folder(for example, the "input" folder), then run the following codes:
+```
+python smile.py <csv_file_path> [k]
+```
+You can also compare your output to the results in the directory **'example/output_demo'**.
 
-## INPUT DATA
+## INPUT
 ### CSV file
 - demo_short.csv
+
 demo_short.csv contains the foldchange information of 4 genes.
+
 This file is just for quick test. The running time of 4 genes and 3 stages in both Gene&Stage mode and gene_only mode is less than 1 min in the testing server.
 ```
 st01,st12,st23,rel,fmf,pp1,pna
@@ -25,7 +29,9 @@ st01,st12,st23,rel,fmf,pp1,pna
 
 
 - demo_long.csv
+
 The demo_long.csv contains the foldchange information of 11 genes.
+
 The running time of 11 genes and 5 stages in both Gene&Stage mode and gene_only mode is about 40 min in the testing server.
 ```
 st01,st12,st23,st34,st45,rel,fmf,pp1,pna,c837,adv,asm,vad,MT1,MT2,bk1
@@ -40,13 +46,17 @@ st01,st12,st23,st34,st45,rel,fmf,pp1,pna,c837,adv,asm,vad,MT1,MT2,bk1
 
 ### mode
 - **Gene&Stage mode**
+
 Gene&Stage mode will use the stage information and foldchange information of genes to generate the bayesian network.
 - **Gene_only mode**
+
 Gene_only mode will only use the foldchange information of genes to generate the bayesian network.
 
+### optional parameters
+`[k]` is one of the parameters needed for runnning BNW, which set the number of high scoring networks to include in model averaging. The bigger k is, the longer the running time will be. Here, we set **k = 20** as the default.
 
 ## OUTPUT
-SMILE will generate the jsd matrix file (inputPrefix_jsd_matrix.csv) and the list file of gene-JSD pairs (that is, inputPrefix_**rearranged**_jsd_matrix.csv) and the corresponding files for Gene_only mode(inputPrefix_jsd_matrix-GeneOnly.csv and inputPrefix_**rearranged**_jsd_matrix-GeneOnly.csv)
+SMILE will generate the JSD matrix file (`inputPrefix_jsd_matrix.csv`) and the list file of gene-JSD pairs (that is, `inputPrefix_rearranged_jsd_matrix.csv`), as well as the corresponding files for Gene_only mode(`inputPrefix_jsd_matrix-GeneOnly.csv` and `inputPrefix_rearranged_jsd_matrix-GeneOnly.csv`)
 - demo_short_jsd_matrix.csv
 ```
 rel,fmf,pp1,pna
