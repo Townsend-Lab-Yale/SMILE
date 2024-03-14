@@ -1,6 +1,5 @@
 # SMILE
-SMILE (Systems Maximum Informative Laboratory Experiment) 
-SMILE uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Network, and then calculates the Jensen-Shannon divergence between networks.
+SMILE (Systems Maximum Informative Laboratory Experiment) uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Network, and then calculates the Jensen-Shannon divergence between networks.
 ## INSTALLATION
 
 SMILE has been tested in Red Hat Enterprise Linux release 8.8 and based on Python 3.
@@ -40,9 +39,9 @@ st01,st12,st23,st34,st45,rel,fmf,pp1,pna,c837,adv,asm,vad,MT1,MT2,bk1
 
 
 ### mode
-#### Gene&Stage mode
+- **Gene&Stage mode**
 Gene&Stage mode will use the stage information and foldchange information of genes to generate the bayesian network.
-#### Gene_only mode
+- **Gene_only mode**
 Gene_only mode will only use the foldchange information of genes to generate the bayesian network.
 
 

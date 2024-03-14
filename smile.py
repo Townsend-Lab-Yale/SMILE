@@ -106,8 +106,8 @@ if __name__ == '__main__':
     def generate_files(output_dir_prefix, output_dir_suffix, input_data = input_data,slice_columns=None):
         output_dir = f"{output_dir_prefix}{output_dir_suffix}"
         os.makedirs(output_dir, exist_ok=True)
-        shutil.copy("./input/banlist.txt", f"{output_dir}/banlist.txt")
-        shutil.copy("./input/whitelist.txt", f"{output_dir}/whitelist.txt")
+        shutil.copy("./tools/banlist.txt", f"{output_dir}/banlist.txt")
+        shutil.copy("./tools/whitelist.txt", f"{output_dir}/whitelist.txt")
         ## preserve the newlines within the file but avoid the extra newline at the end of the file.
         if slice_columns is not None:
             with open(f"{output_dir}/input.txt", "w",newline="") as file:
