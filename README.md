@@ -1,5 +1,5 @@
 # SMILE
-SMILE (Systems Maximum Informative Laboratory Experiment) uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Network, and then calculates the Jensen-Shannon divergence (JSD) between networks.
+**SMILE (Systems Maximum Informative Laboratory Experiment)** uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Network, and then calculates the **Jensen-Shannon divergence (JSD)** between networks.
 ## INSTALLATION
 
 SMILE has been tested in **Red Hat Enterprise Linux release 8.8** and is based on **Python 3**.
