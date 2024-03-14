@@ -1,5 +1,7 @@
 # SMILE
-**SMILE (Systems Maximum Informative Laboratory Experiment)** uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Network, and then calculates the **Jensen-Shannon divergence (JSD)** between networks.
+**SMILE (Systems Maximum Informative Laboratory Experiment)** performs informative gene knockouts (One Gene was *in insilico* knockec out each time ), and uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Networks, then calculates the **Jensen-Shannon divergence (JSD)** between networks. Finally, SMILE can provide a order list of gene impacts.
+
+A gene that exhibits a higher informative impact would play an more importent role in in the gene regulatory networks (potentially function more upstream in a linear regulatory order or be the hub gene) , and will be ranked higher for gene manipulation verification experiments. 
 ## INSTALLATION
 
 SMILE has been tested in **Red Hat Enterprise Linux release 8.8** and is based on **Python 3**.
@@ -16,7 +18,7 @@ You can also compare your output to the results in the directory **'example/outp
 ### CSV file
 - demo_short.csv
 
-demo_short.csv contains the foldchange information of 4 genes.
+**demo_short.csv** contains the foldchange information of 4 genes.
 
 This file is just for quick test. The running time of 4 genes and 3 stages in both **Gene&Stage** mode and **Gene_only** mode is less than 1 min in the testing server.
 ```
@@ -26,11 +28,15 @@ st01,st12,st23,rel,fmf,pp1,pna
 1,2,3,1.976248755,11.80867992,1.088135298,1.256936979
 1,2,3,2.218305097,10.73544157,1.17096892,2.582973777
 ```
+The first row are variable names.
 
+The second row describes the type of each variable: 1 is for each continuous variable.
 
-- demo_long.csv
+The remaining rows are the foldchange information of the variable (Stage specific expression data collected from real experiments).
 
-The demo_long.csv contains the foldchange information of 11 genes.
+Note: SMILE also provide a **demo_long.csv** as an example of more complicated cases.
+
+The **demo_long.csv** contains the foldchange information of 11 genes.
 
 The running time of 11 genes and 5 stages in both **Gene&Stage** mode and **Gene_only** mode is about 40 min in the testing server.
 ```
@@ -43,7 +49,6 @@ st01,st12,st23,st34,st45,rel,fmf,pp1,pna,c837,adv,asm,vad,MT1,MT2,bk1
 2,3,4,5,5,2.98139685,12.44567093,1.11011892,3.282725138,10.95434666,-1.650521132,1.879659864,2.480042579,1.524784607,2.594232992,-0.728818972
 ```
 
-
 ### mode
 - **Gene&Stage mode**
 
@@ -51,6 +56,16 @@ st01,st12,st23,st34,st45,rel,fmf,pp1,pna,c837,adv,asm,vad,MT1,MT2,bk1
 - **Gene_only mode**
 
 **Gene_only** mode will only use the foldchange information of genes to generate the bayesian network.
+
+That is, for the **Gene_only** mode, SMILE will only use the gene columns as the input, like the following:
+```
+rel,fmf,pp1,pna
+1,1,1,1
+1.95934,12.2566,0.970340666,1.80615
+1.976248755,11.80867992,1.088135298,1.256936979
+2.218305097,10.73544157,1.17096892,2.582973777
+```
+
 
 ### optional parameters
 `[k]` is one of the parameters needed for runnning BNW, which set the number of high scoring networks to include in model averaging. The bigger k is, the longer the running time will be. Here, we set **k = 20** as the default.
