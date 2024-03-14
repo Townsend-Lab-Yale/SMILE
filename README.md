@@ -1,5 +1,5 @@
 # SMILE
-**SMILE (Systems Maximum Informative Laboratory Experiment)** performs informative gene knockouts (One Gene was *in insilico* knockec out each time ), and uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Networks, then calculates the **Jensen-Shannon divergence (JSD)** between networks. Finally, SMILE can provide a order list of gene impacts.
+**SMILE (Systems Maximum Informative Laboratory Experiment)** performs informative gene knockouts (One gene was *in silico* knocked out each time ), and uses [BNW (Ziebarth et al. Bioinformatics, 2013.)](https://academic.oup.com/bioinformatics/article/29/21/2801/195868) to generate the Bayesian Networks, then calculates the **Jensen-Shannon divergence (JSD)** between networks. Finally, SMILE can provide a order list of gene impacts.
 
 A gene that exhibits a higher informative impact would play an more importent role in in the gene regulatory networks (potentially function more upstream in a linear regulatory order or be the hub gene) , and will be ranked higher for gene manipulation verification experiments. 
 ## INSTALLATION
