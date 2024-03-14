@@ -18,7 +18,7 @@ You can also compare your output to the results in the directory **'example/outp
 
 demo_short.csv contains the foldchange information of 4 genes.
 
-This file is just for quick test. The running time of 4 genes and 3 stages in both Gene&Stage mode and gene_only mode is less than 1 min in the testing server.
+This file is just for quick test. The running time of 4 genes and 3 stages in both **Gene&Stage** mode and **Gene_only** mode is less than 1 min in the testing server.
 ```
 st01,st12,st23,rel,fmf,pp1,pna
 1,1,1,1,1,1,1
@@ -32,7 +32,7 @@ st01,st12,st23,rel,fmf,pp1,pna
 
 The demo_long.csv contains the foldchange information of 11 genes.
 
-The running time of 11 genes and 5 stages in both Gene&Stage mode and gene_only mode is about 40 min in the testing server.
+The running time of 11 genes and 5 stages in both **Gene&Stage** mode and **Gene_only** mode is about 40 min in the testing server.
 ```
 st01,st12,st23,st34,st45,rel,fmf,pp1,pna,c837,adv,asm,vad,MT1,MT2,bk1
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
@@ -47,16 +47,16 @@ st01,st12,st23,st34,st45,rel,fmf,pp1,pna,c837,adv,asm,vad,MT1,MT2,bk1
 ### mode
 - **Gene&Stage mode**
 
-Gene&Stage mode will use the stage information and foldchange information of genes to generate the bayesian network.
+**Gene&Stage** mode will use the stage information and foldchange information of genes to generate the bayesian network.
 - **Gene_only mode**
 
-Gene_only mode will only use the foldchange information of genes to generate the bayesian network.
+**Gene_only** mode will only use the foldchange information of genes to generate the bayesian network.
 
 ### optional parameters
 `[k]` is one of the parameters needed for runnning BNW, which set the number of high scoring networks to include in model averaging. The bigger k is, the longer the running time will be. Here, we set **k = 20** as the default.
 
 ## OUTPUT
-SMILE will generate the JSD matrix file (`inputPrefix_jsd_matrix.csv`) and the list file of gene-JSD pairs (that is, `inputPrefix_rearranged_jsd_matrix.csv`), as well as the corresponding files for Gene_only mode(`inputPrefix_jsd_matrix-GeneOnly.csv` and `inputPrefix_rearranged_jsd_matrix-GeneOnly.csv`)
+SMILE will generate the JSD matrix file (`inputPrefix_jsd_matrix.csv`) and the list file of gene-JSD pairs (that is, `inputPrefix_rearranged_jsd_matrix.csv`), as well as the corresponding files for **Gene_only** mode(`inputPrefix_jsd_matrix-GeneOnly.csv` and `inputPrefix_rearranged_jsd_matrix-GeneOnly.csv`)
 - demo_short_jsd_matrix.csv
 ```
 rel,fmf,pp1,pna
