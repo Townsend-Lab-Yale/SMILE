@@ -18,7 +18,7 @@ You can also compare your output to the results in the directory **'example/outp
 ### CSV file
 - demo_short.csv
 
-**demo_short.csv** contains the foldchange information of 4 genes.
+**demo_short.csv** contains the foldchange information of 4 genes（**Do not include space in the gene name**）.
 
 This file is just for quick test. The running time of 4 genes and 3 stages in both **Gene&Stage** mode and **Gene_only** mode is less than 1 min in the testing server.
 ```
